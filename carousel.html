@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        /*root*/
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        /*container de imagens*/
+        .galeria{
+            max-width: 1000px;
+            margin: auto;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        /*imagens*/
+        .img{
+            position: relative;
+            width: 500%; /*500% pois são 5 imagens*/
+            margin: 0;
+            left: 0;
+            display: flex;/*para que as imagens fiquem uma ao lado da outra*/
+            animation-duration: 20s;
+            animation-name: slide;
+            animation-iteration-count: infinite;
+        }
+
+        .img img{
+            width: 100%; /*ocupará 100% do container figure, que estará com display flex*/
+            height: 400px;
+        }
+
+        @keyframes slide {
+            /*as porcentagens referem-se ao tempo da animação*/
+            
+            /*de 0% a 20% são 4 segundos que ficará na primeira imagem*/
+            0%{left: 0;}
+            20%{left: 0;}
+
+            /*o acréscimo de 5% significa que demorará 1 segundo para passar para a próxima imagem*/
+            25%{left: -100%;}
+            45%{left: -100%;}/*para ficar 4 segundos na segunda imagem*/
+            50%{left: -200%;}
+
+            70%{left: -200%;}/*para ficar 4 segundos na terceira imagem*/
+            75%{left: -300%;}
+
+            95%{left: -300%;}/*para ficar 4 segundos na quarta imagem*/
+
+            100%{left: -400%;}/*repetir a primeira imagem como última para dar a impressão de continuidade*/
+        }
+    </style>
+</head>
+<body>
+    <!--Container de imagens-->
+    <section class="galeria">
+
+        <!--Imagens-->
+        <picture class="img">
+            <img src="img1.jpg" alt="">
+            <img src="img2.jpg" alt="">
+            <img src="img3.jpg" alt="">
+            <img src="img4.jpg" alt="">
+            <img src="img1.jpg" alt="">
+        </picture>
+
+    </section>
+</body>
+</html>
